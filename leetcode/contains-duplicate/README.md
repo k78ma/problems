@@ -1,0 +1,1 @@
+Notes: https://k78ma.github.io/quartz/CS/Problems/Contains-Duplicate-(LC-217)
