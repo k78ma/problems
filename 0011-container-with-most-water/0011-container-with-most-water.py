@@ -8,9 +8,9 @@ class Solution:
         while l < r:
             maxWater = max(maxWater, (r - l)*(min(height[l], height[r])))
             
-            if height[l] < height[r]:
+            if height[l] <= height[r]:
                 l += 1
-            elif height[l] >= height[r]:
+            elif height[l] > height[r]:
                 r -= 1
             
         return maxWater
