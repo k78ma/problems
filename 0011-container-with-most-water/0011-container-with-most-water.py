@@ -6,12 +6,7 @@ class Solution:
         l, r = 0, len(height) - 1
         
         while l < r:
-            water_width = r - l
-            water_height = min(height[l], height[r])
-            
-            water_total = water_width * water_height
-            
-            maxWater = max(maxWater, water_total)
+            maxWater = max(maxWater, (r - l)*(min(height[l], height[r])))
             
             if height[l] < height[r]:
                 l += 1
