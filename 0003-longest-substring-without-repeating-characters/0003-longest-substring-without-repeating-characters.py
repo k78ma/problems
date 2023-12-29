@@ -12,6 +12,6 @@ class Solution:
                 l += 1
                 
             charSet.add(s[r])
-            maxLength = max(maxLength, r-l+1)
+            maxLength = max(maxLength, len(charSet))
         
         return maxLength
