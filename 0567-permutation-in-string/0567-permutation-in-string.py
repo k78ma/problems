@@ -10,7 +10,6 @@ class Solution:
             s1_count[ch] = s1_count.get(ch, 0) + 1
 
         for i in range(len(s2)):
-            # Add new character to the window
             window_count[s2[i]] = window_count.get(s2[i], 0) + 1
 
             if i >= len(s1):
