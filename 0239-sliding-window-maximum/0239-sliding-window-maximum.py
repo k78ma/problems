@@ -7,7 +7,7 @@ class Solution:
         q = collections.deque() # deque of indexes
         
         while r < len(nums):
-            while q and nums[q[-1]] < nums[r]: # pop smaller values from q
+            while q and nums[r] > nums[q[-1]]: # pop smaller values from q
                 q.pop()
             q.append(r)
             
@@ -15,7 +15,7 @@ class Solution:
                 q.popleft() # remove left val from window
                 
                 
-            if (r + 1) >= k:
+            if (r - l + 1) >= k:
                 result.append(nums[q[0]])
                 l += 1
                 
