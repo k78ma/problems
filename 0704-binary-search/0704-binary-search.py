@@ -11,6 +11,6 @@ class Solution:
                 r = m - 1
             elif nums[m] < target:
                 l = m + 1
-            else:
+            elif nums[m] == target:
                 return m
         return -1
