@@ -9,14 +9,15 @@ class Solution:
         
         def dfs(node):
             if not node:
-                return [True, 0]
+                return 0
             
             left, right = dfs(node.left), dfs(node.right)
-            balanced = (abs(left[1] - right[1]) <= 1 
-                        and left[0] 
-                        and right[0])
+            if left == -1 or right == -1:
+                return -1
+            if abs(left - right) > 1:
+                return -1
             
-            height = max(left[1], right[1]) + 1
-            return [balanced, height]
-        
-        return dfs(root)[0]
+            height = max(left, right) + 1
+            return height
+            
+        return dfs(root) != -1
