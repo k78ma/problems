@@ -1,22 +1,23 @@
 class Solution:
+    
     def partition(self, s: str) -> List[List[str]]:
         
-        n = len(s)
-    
-        def is_palindrome(word):
-            return word == word[::-1]
-
-        def dfs(start, path):
-            if start == n:
-                result.append(path[:])
-                return
-
-            for end in range(start + 1, n + 1):
-                prefix = s[start : end]
-                if is_palindrome(prefix):
-                    dfs(end, path + [prefix])
-
-
         result = []
-        dfs(0, [])
+        part = []
+        
+    
+        def dfs(i):
+            if i >= len(s):
+                result.append(part.copy())
+                return
+            for j in range(i, len(s)):
+                if self.isPalindrome(s[i:j+1]):
+                    part.append(s[i:j+1])
+                    dfs(j+1)
+                    part.pop()
+                    
+        dfs(0)
         return result
+    
+    def isPalindrome(self, s):
+        return s == s[::-1]
