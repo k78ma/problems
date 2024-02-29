@@ -14,7 +14,7 @@ class Solution:
     def letterCombinations(self, digits: str) -> List[str]:
         
         def dfs(start_index, path):
-            if start_index == len(digits):
+            if len(path) == len(digits):
                 result.append(''.join(path))
                 return
             
