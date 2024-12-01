@@ -1,0 +1,13 @@
+.vscode/
+!cses/*.cpp
+*.exe
+*.out
+.DS_Store
+*.o
+*.obj
+*.app
+*.dll
+*.dylib
+*.so
+*.lib
+*.a
