@@ -5,38 +5,6 @@
 
 using namespace std;
 
-bool checkIncreasing(vector<int> report)
-{
-    for (int i = 1; i < report.size(); i++)
-    {
-        if (report[i] <= report[i-1])
-        {
-            return false;
-        }
-        if (report[i] - report[i-1] > 3)
-        {
-            return false;
-        }
-    }
-    return true;
-}
-
-bool checkDecreasing(vector<int> report) 
-{
-    for (int i = 1; i < report.size(); i++)
-    {
-        if (report[i] >= report[i-1])
-        {
-            return false;
-        }
-        if (report[i-1] - report[i] > 3)
-        {
-            return false;
-        }
-    }
-    return true;
-}
-
 bool checkSequence(const vector<int>& report, bool checkingIncrease) {
     for (int i = 1; i < report.size(); i++) {
         if (checkingIncrease) {
@@ -81,7 +49,7 @@ int main() {
     long long part1_counter = 0;
     for (const auto& report : reports) 
     {
-        if (checkDecreasing(report) || checkIncreasing(report)) 
+        if (checkSequence(report, true) || checkSequence(report, false)) 
         {
             part1_counter++;
         }
@@ -93,7 +61,7 @@ int main() {
     long long part2_counter = 0;
     for (const auto& report : reports) {
         // First check if it's already safe without removing any number
-        if (checkDecreasing(report) || checkIncreasing(report)) {
+        if (checkSequence(report, true) || checkSequence(report, false)) {
             part2_counter++;
             continue;
         }
