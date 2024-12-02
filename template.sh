@@ -10,6 +10,11 @@ filename=$1
 # Create file and populate with C++ template
 cat > "$filename" << EOL
 #include <iostream>
+#include <iostream>
+#include <fstream>
+#include <vector>
+#include <sstream>
+#include <algorithm>
 
 using namespace std;
 
