@@ -15,6 +15,7 @@ cat > "$filename" << EOL
 #include <vector>
 #include <sstream>
 #include <algorithm>
+#include <cmath>
 
 using namespace std;
 
